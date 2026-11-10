@@ -1,6 +1,6 @@
 # NexusFlow
 
-**NexusFlow: Visual IoT Telemetry & Rule Engine** is Tejas Vikram Singh's second Infotact Solutions internship project, separate from ProxiSpeak.
+**NexusFlow: Visual IoT Telemetry & Rule Engine** is Tejas Vikram Singh's Infotact Solutions internship project.
 
 ## Status
 
@@ -21,7 +21,6 @@ The assignment letter contains both the one-month project completion field and t
 
 - [Project brief](docs/PROJECT_BRIEF.md)
 - [Starter roadmap](docs/ROADMAP.md)
-- [ProxiSpeak handoff context](docs/PROXISPEAK_CONTEXT.md)
 
 ## Getting started
 
@@ -30,3 +29,4 @@ This repository currently contains planning documents only. Add the application 
 ## Internship deliverables
 
 The assignment letter lists source code (if applicable), project documentation, a project report, a presentation, model evaluation results (if applicable), and a final demonstration (if applicable). It also expects periodic progress updates and work to be original.
+
