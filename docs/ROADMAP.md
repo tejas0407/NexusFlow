@@ -42,3 +42,10 @@ This roadmap is a planning scaffold, not a confirmed specification. Adjust it af
 ## Working log
 
 Add dated entries as work proceeds. Record completed outcomes, decisions, blockers, and next steps without including confidential company information.
+
+### Week 2 — 17–22 November 2026
+
+- Built a responsive dashboard prototype with summary cards, telemetry charts, a searchable device list, and sample rule activity.
+- Added chart metric and time-range controls, plus preview notices for actions that still need confirmed requirements or live integrations.
+- Kept all dashboard values explicitly labeled as illustrative sample data; no device connections or rule execution are implemented yet.
+- Next: confirm the expected device inputs, telemetry fields, dashboard scope, and rule actions before connecting a backend.
