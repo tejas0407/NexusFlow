@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f7fa" />
+    <meta name="description" content="NexusFlow IoT telemetry and rule engine dashboard prototype." />
+    <title>NexusFlow | Operations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand" href="#overview" aria-label="NexusFlow home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span class="brand-name">nexus<span>flow</span></span>
+        </a>
+
+        <div class="workspace-picker">
+          <span class="workspace-avatar">N</span>
+          <span class="workspace-copy"><strong>Northstar Labs</strong><small>Workspace</small></span>
+          <span class="chevron" aria-hidden="true">⌄</span>
+        </div>
+
+        <div class="nav-label">WORKSPACE</div>
+        <nav class="nav-list">
+          <a class="nav-item is-active" href="#overview" aria-current="page"><span class="nav-icon">▦</span> Overview</a>
+          <a class="nav-item" href="#devices"><span class="nav-icon">◉</span> Devices <span class="nav-count">16</span></a>
+          <a class="nav-item" href="#telemetry"><span class="nav-icon">⌁</span> Telemetry</a>
+          <a class="nav-item" href="#rules"><span class="nav-icon">⚑</span> Rule engine <span class="nav-dot"></span></a>
+        </nav>
+
+        <div class="nav-label nav-label-spaced">MANAGE</div>
+        <nav class="nav-list">
+          <a class="nav-item" href="#overview"><span class="nav-icon">◷</span> Activity</a>
+          <a class="nav-item" href="#overview"><span class="nav-icon">⚙</span> Settings</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="plan-card">
+            <div class="plan-icon">✦</div>
+            <div><strong>Starter workspace</strong><small>16 of 25 devices</small></div>
+            <div class="plan-meter"><span></span></div>
+          </div>
+          <div class="profile-row">
+            <div class="profile-avatar">TS</div>
+            <div class="profile-copy"><strong>Tejas Singh</strong><small>Project admin</small></div>
+            <span class="profile-menu">•••</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content" id="overview">
+        <header class="topbar">
+          <div class="breadcrumbs"><span>Workspace</span><span class="crumb-sep">/</span><strong>Overview</strong></div>
+          <div class="topbar-actions">
+            <span class="preview-pill"><span class="pulse-dot"></span> Preview mode</span>
+            <button class="icon-button" type="button" aria-label="Notifications"><span>♧</span><i></i></button>
+            <div class="top-avatar" aria-label="Tejas Singh">TS</div>
+          </div>
+        </header>
+
+        <div class="content-wrap">
+          <section class="page-heading">
+            <div>
+              <p class="eyebrow">SUNDAY, NOVEMBER 22</p>
+              <h1>Good morning, Tejas <span class="wave">✦</span></h1>
+              <p class="subtitle">Here’s what’s happening across your connected environment.</p>
+            </div>
+            <button class="button button-primary" id="add-device" type="button"><span class="plus">＋</span> Add device</button>
+          </section>
+
+          <div class="demo-notice"><span class="notice-mark">i</span><span><strong>Sample dashboard</strong> — values below are illustrative preview data. No IoT devices or live feeds are connected.</span><button class="notice-close" type="button" aria-label="Dismiss sample data notice">×</button></div>
+
+          <section class="metric-grid" aria-label="Environment summary">
+            <article class="metric-card">
+              <div class="metric-top"><span class="metric-label">Devices online</span><span class="metric-icon icon-mint">◉</span></div>
+              <div class="metric-main"><strong>12</strong><span class="metric-total">/ 16</span><span class="metric-change change-good">↗ 2</span></div>
+              <div class="metric-foot"><span class="status-dot green"></span> 12 connected <span class="metric-separator">·</span> 4 offline</div>
+            </article>
+            <article class="metric-card">
+              <div class="metric-top"><span class="metric-label">Events today</span><span class="metric-icon icon-blue">⌁</span></div>
+              <div class="metric-main"><strong>248</strong><span class="metric-change change-good">↗ 12.8%</span></div>
+              <div class="metric-foot">Compared with previous day</div>
+            </article>
+            <article class="metric-card">
+              <div class="metric-top"><span class="metric-label">Rules triggered</span><span class="metric-icon icon-amber">⚑</span></div>
+              <div class="metric-main"><strong>3</strong><span class="metric-change change-warn">Needs review</span></div>
+              <div class="metric-foot">1 critical <span class="metric-separator">·</span> 2 warnings</div>
+            </article>
+            <article class="metric-card">
+              <div class="metric-top"><span class="metric-label">Avg. response time</span><span class="metric-icon icon-violet">◷</span></div>
+              <div class="metric-main"><strong>84</strong><span class="metric-unit">ms</span><span class="metric-change change-good">↘ 6.4%</span></div>
+              <div class="metric-foot">Across the last 24 hours</div>
+            </article>
+          </section>
+
+          <section class="panel telemetry-panel" id="telemetry">
+            <div class="panel-heading">
+              <div><div class="panel-title-row"><h2>Telemetry overview</h2><span class="live-badge"><span class="pulse-dot"></span> SAMPLE</span></div><p class="panel-subtitle">Illustrative readings across your environment</p></div>
+              <div class="chart-controls">
+                <label class="sr-only" for="metric-select">Telemetry metric</label>
+                <select id="metric-select" class="select-control"><option value="temperature">Temperature</option><option value="humidity">Humidity</option><option value="pressure">Pressure</option></select>
+                <div class="range-switch" role="group" aria-label="Chart time range"><button class="range-button" data-range="1H" type="button">1H</button><button class="range-button is-selected" data-range="6H" type="button">6H</button><button class="range-button" data-range="24H" type="button">24H</button></div>
+              </div>
+            </div>
+            <div class="chart-legend"><span class="legend-line"></span><span id="chart-legend-label">Temperature</span><span class="legend-location">Northstar facility</span></div>
+            <div class="chart-container"><div class="y-axis" id="y-axis"><span>32°</span><span>28°</span><span>24°</span><span>20°</span><span>16°</span></div><div class="chart-area"><svg id="telemetry-chart" viewBox="0 0 840 220" role="img" aria-label="Illustrative temperature readings over time" preserveAspectRatio="none"><defs><linearGradient id="area-fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#31b89b" stop-opacity=".18"/><stop offset="100%" stop-color="#31b89b" stop-opacity="0"/></linearGradient></defs><g class="grid-lines"><line x1="0" y1="12" x2="840" y2="12"/><line x1="0" y1="60" x2="840" y2="60"/><line x1="0" y1="108" x2="840" y2="108"/><line x1="0" y1="156" x2="840" y2="156"/><line x1="0" y1="204" x2="840" y2="204"/></g><path id="chart-area-fill" class="chart-fill" d=""/><path id="chart-line" class="chart-line" d=""/><g id="chart-points"></g></svg><div class="x-axis" id="x-axis"><span>08:00</span><span>09:00</span><span>10:00</span><span>11:00</span><span>12:00</span><span>13:00</span><span>14:00</span></div></div></div>
+            <div class="chart-footnote"><span class="status-dot green"></span> Sample values <span class="footnote-divider">·</span> Updated just now</div>
+          </section>
+
+          <div class="lower-grid">
+            <section class="panel devices-panel" id="devices">
+              <div class="panel-heading compact-heading"><div><h2>Devices</h2><p class="panel-subtitle">A snapshot of your connected equipment</p></div><a class="text-link" href="#devices">View all <span>→</span></a></div>
+              <div class="device-toolbar"><div class="device-search"><span>⌕</span><label class="sr-only" for="device-search">Search devices</label><input id="device-search" type="search" placeholder="Search devices" autocomplete="off" /></div><button class="filter-button" id="device-filter" type="button">All status <span>⌄</span></button></div>
+              <div class="device-table-wrap"><table class="device-table"><thead><tr><th>DEVICE</th><th>LAST READING</th><th>STATUS</th><th>LAST SEEN</th></tr></thead><tbody id="device-rows"></tbody></table><div class="empty-state" id="empty-state" hidden>No devices match your search.</div></div>
+              <div class="table-footer"><span>Showing <strong id="device-count">4</strong> of 16 devices</span><div><button class="pagination-button" type="button" disabled aria-label="Previous page">‹</button><button class="pagination-button" type="button" aria-label="Next page">›</button></div></div>
+            </section>
+
+            <section class="panel rules-panel" id="rules">
+              <div class="panel-heading compact-heading"><div><h2>Rule activity</h2><p class="panel-subtitle">Recent sample alerts and conditions</p></div><a class="text-link" href="#rules">View all <span>→</span></a></div>
+              <div class="rule-list">
+                <article class="rule-item"><span class="rule-symbol rule-critical">!</span><div class="rule-copy"><strong>Cold room temperature high</strong><span>Temperature &gt; 8°C · Storage A</span></div><span class="rule-time">2m ago</span></article>
+                <article class="rule-item"><span class="rule-symbol rule-warning">↗</span><div class="rule-copy"><strong>Humidity threshold reached</strong><span>Humidity &gt; 70% · Greenhouse</span></div><span class="rule-time">18m ago</span></article>
+                <article class="rule-item"><span class="rule-symbol rule-warning">↘</span><div class="rule-copy"><strong>Flow rate below target</strong><span>Flow rate &lt; 12 L/min · Pump 02</span></div><span class="rule-time">41m ago</span></article>
+              </div>
+              <div class="rule-footer"><span><span class="status-dot green"></span> 8 active rules</span><button class="text-link-button" id="add-rule" type="button">Manage rules <span>→</span></button></div>
+            </section>
+          </div>
+
+          <footer class="page-footer"><span>NexusFlow <span class="footer-separator">·</span> IoT operations preview</span><span>Prototype interface <span class="footer-separator">·</span> Sample data only</span></footer>
+        </div>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
