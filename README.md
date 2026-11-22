@@ -4,7 +4,7 @@
 
 ## Status
 
-Repository initialized with assignment notes and a starter plan. Requirements, architecture, and technology choices are still to be confirmed from the project brief or mentor.
+The repository includes assignment notes, a starter plan, and a responsive frontend dashboard prototype. The dashboard uses illustrative sample data; device integrations, rule behavior, and final requirements remain to be confirmed.
 
 ## Project at a glance
 
@@ -21,10 +21,11 @@ The assignment letter contains both the one-month project completion field and t
 
 - [Project brief](docs/PROJECT_BRIEF.md)
 - [Starter roadmap](docs/ROADMAP.md)
+- [Frontend dashboard](frontend/index.html)
 
 ## Getting started
 
-This repository currently contains planning documents only. Add the application structure after confirming the requirements and preferred stack. Keep credentials and private configuration out of Git; use an example environment file for variable names.
+Open `frontend/index.html` in a modern browser to view the dashboard prototype. It uses plain HTML, CSS, and JavaScript and does not require a build step. The displayed devices, readings, events, and alerts are sample data; no live IoT feeds are connected. Keep credentials and private configuration out of Git; use an example environment file for variable names.
 
 ## Internship deliverables
 
